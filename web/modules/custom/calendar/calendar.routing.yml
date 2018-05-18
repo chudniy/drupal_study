@@ -1,0 +1,7 @@
+calendar.routing:
+  path: '/calendar'
+  defaults:
+    _controller: 'Drupal\calendar\Controller\CalendarController::calendarView'
+  requirements:
+    _permission: 'view content'
+

@@ -1,0 +1,6 @@
+calendar.link:
+  title: 'Calendar'
+  description: 'Custom calendar link'
+  menu_name: main
+  route_name: calendar.routing
+  weight: 100

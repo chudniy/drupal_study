@@ -1,0 +1,6 @@
+name: News module
+type: module
+description: 'Getting latest news'
+package: Development
+core: 8.x
+

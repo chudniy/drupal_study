@@ -1,0 +1,7 @@
+calendar.routing:
+  path: '/news'
+  defaults:
+    _controller: 'Drupal\news\Controller\NewsController::getNews'
+  requirements:
+    _permission: 'view content'
+

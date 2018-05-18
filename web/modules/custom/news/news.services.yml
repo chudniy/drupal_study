@@ -1,0 +1,7 @@
+parameters:
+  url: 'https://newsapi.org/v2/top-headlines?country=ua&apiKey=0fee88543cfe4100945a3dc2c87e43d7'
+
+services:
+  news.sources:
+    class: Drupal\news\Services\NewsSources
+    arguments: ['%url%']

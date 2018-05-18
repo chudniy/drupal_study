@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function news_theme($existing, $type, $theme, $path) {
+    $variables = array(
+        'news' => array(
+            'variables' => array(
+                'news_array' => NULL,
+            ),
+            'template' => 'news',
+        ),
+    );
+    return $variables;
+}
+
+/**
+ * Template preprocess function for Lorem ipsum.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - source_text
+ */
+function template_preprocess_news(&$variables) {
+    $service = \Drupal::service('news.sources');
+
+    $news_array = $service->get()->articles;
+
+    foreach ($news_array as $index => $news) {
+        $variables['news_array'][$index]['title'] = $news->title;
+        $variables['news_array'][$index]['description'] = $news->description;
+        $variables['news_array'][$index]['url'] = $news->url;
+        $variables['news_array'][$index]['urlToImage'] = $news->urlToImage;
+        $variables['news_array'][$index]['publishedAt'] = $news->publishedAt;
+        $variables['news_array'][$index]['source'] = $news->source->name;
+    }
+}

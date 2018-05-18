@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Default theme implementation to print news.
+ *
+ * Available variables:
+ *   - news_array
+ *
+ * @see template_preprocess_news)
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="news-wrapper">
+    {% for item in news_array %}
+        <div>
+            <a href="{{ item.url }}"><h2>{{ item.title }}</h2></a>
+            <img src="{{ item.urlToImage }}" alt="">
+            <p>{{ item.description }}</p>
+
+        </div>
+    {% endfor %}
+</div>

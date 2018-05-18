@@ -1,0 +1,6 @@
+name: Calendar Module
+type: module
+description: My custom calendar module
+core: 8.x
+package: Custom
+
