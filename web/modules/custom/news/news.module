@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Block\BlockPluginInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -35,4 +37,12 @@ function template_preprocess_news(&$variables) {
         $variables['news_array'][$index]['publishedAt'] = $news->publishedAt;
         $variables['news_array'][$index]['source'] = $news->source->name;
     }
+}
+
+
+/**
+ * Implements hook_block_view_BASE_BLOCK_ID_alter().
+ */
+function news_block_view_newsblock_alter(array &$build, BlockPluginInterface $block) {
+    $build['#contextual_links']['news_settings']['route_parameters']['block'] = 'newsblock';
 }

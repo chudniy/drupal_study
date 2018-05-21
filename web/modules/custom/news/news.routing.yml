@@ -3,5 +3,11 @@ news.routing:
   defaults:
     _controller: 'Drupal\news\Controller\NewsController::getNews'
   requirements:
-    _permission: 'view content'
+    _permission: 'access content'
 
+news.news_settings:
+  path: '/admin/config/services/news'
+  defaults:
+      _controller: 'Drupal\news\Controller\NewsSettingsController::getSettingsPage'
+  requirements:
+    _permission: 'administer site configuration'
