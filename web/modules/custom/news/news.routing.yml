@@ -1,4 +1,4 @@
-calendar.routing:
+news.routing:
   path: '/news'
   defaults:
     _controller: 'Drupal\news\Controller\NewsController::getNews'

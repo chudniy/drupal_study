@@ -1,0 +1,6 @@
+news.link:
+  title: 'News'
+  description: 'Custom calendar link'
+  menu_name: main
+  route_name: news.routing
+  weight: 100

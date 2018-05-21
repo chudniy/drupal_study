@@ -14,10 +14,12 @@
 <div class="news-wrapper">
     {% for item in news_array %}
         <div>
-            <a href="{{ item.url }}"><h2>{{ item.title }}</h2></a>
-            <img src="{{ item.urlToImage }}" alt="">
+            <a href="{{ item.url }}" target="_blank"><h2>{{ item.title }}</h2></a>
+            <div class="clearfix">
+                <span>{{ item.publishedAt|date("d-m-Y") }} - <a href="http://{{ item.source|lower }}" target="_blank">{{ item.source|lower }}</a></span>
+            </div>
+            <img src="{{ item.urlToImage }}" alt="{{ item.title }}" style="width: 100%;">
             <p>{{ item.description }}</p>
-
         </div>
     {% endfor %}
 </div>

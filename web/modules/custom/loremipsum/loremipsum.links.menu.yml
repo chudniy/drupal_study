@@ -3,3 +3,11 @@ loremipsum.form:
   description: 'Configure settings for the Lorem Ipsum module.'
   route_name: loremipsum.form
   parent: 'system.admin_config_development'
+
+loremipsum.page:
+  title: 'Generator'
+  description: 'Custom generator'
+  menu_name: main
+  route_name: loremipsum.generate
+  route_parameters: { paragraphs: 5, phrases: 5, }
+  weight: 100
