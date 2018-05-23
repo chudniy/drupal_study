@@ -1,0 +1,5 @@
+name: Dummy Module
+type: module
+description: My experemental module
+core: 8.x
+package: Custom

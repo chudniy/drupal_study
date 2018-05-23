@@ -1,0 +1,26 @@
+<?php
+/**
+ * Implements hook_theme().
+ */
+function MYMODULE_theme($existing, $type, $theme, $path) {
+    $items['calendar_video'] = [
+        'render element' => 'element',
+    ];
+
+    return $items;
+}
+
+/**
+ * Prepares variables for calendar_video template.
+ *
+ * Default template: calendar_video.html.twig.
+ *
+ * @param array $variables
+ *   An associative array of element properties.
+ */
+function template_preprocess_calendar_video(&$variables) {
+    $element = $variables['element'];
+    $variables['attributes'] = new Attribute($element['#attributes']);
+    $variables['sources'] = $element['#sources'];
+    $variables['text'] = !empty($element['#novideo']) ? $element['#novideo']->render() : '';
+}
