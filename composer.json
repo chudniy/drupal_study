@@ -27,6 +27,7 @@
         "drupal/core": "~8.5.3",
         "drupal/devel": "^1.2",
         "drupal/jsonapi": "^1.17",
+        "drupal/restui": "^1.15",
         "drupal/single_datetime": "^1.6",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
